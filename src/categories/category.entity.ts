@@ -1,25 +1,17 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { BlogPost } from 'src/blog-posts/blog-post.entity';
-import { Comment } from 'src/comments/comment.entity';
 
 @Entity()
-export class User {
+export class Category {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
-  username: string;
-
   @Column()
-  password: string;
+  name: string;
 
-  @Column('simple-array')
-  roles: string[];
+  @Column({ default: '' })
+  description: string;
 
   @OneToMany(() => BlogPost, (post) => post.author)
   blogPosts: BlogPost[];
-
-
-  @OneToMany(() => Comment, comment => comment.author)
-  comments: Comment[];
 }

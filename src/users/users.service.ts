@@ -29,5 +29,4 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
-  // Other CRUD operations for users can be added here
 }

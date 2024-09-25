@@ -20,5 +20,4 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
-  // Additional endpoints for CRUD operations can be added here
 }
